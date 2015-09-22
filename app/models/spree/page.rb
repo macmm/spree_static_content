@@ -20,6 +20,8 @@ class Spree::Page < ActiveRecord::Base
 
   before_save :update_positions_and_slug
 
+  accepts_nested_attributes_for :elements
+
   def initialize(*args)
     super(*args)
 

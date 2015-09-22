@@ -19,6 +19,15 @@
       <%= f.error_message_on :body %>
     <% end %>
 
+    <% @page.elements.build unless @page.elements.present? %>
+
+    <%= f.fields_for :elements do |page_element| %>
+      <%= f.field_container :body do %>
+        <%= page_element.label :element, page_element.object.name %> <span class="required">*</span><br />
+        <%= page_element.text_area :body, {rows: 12, :class => 'fullwidth'} %>
+      <% end %>
+    <% end %>
+
   </div>
   <div class="right four columns omega" data-hook="admin_page_form_right">
 
