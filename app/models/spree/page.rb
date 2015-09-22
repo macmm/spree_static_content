@@ -5,7 +5,7 @@ class Spree::Page < ActiveRecord::Base
   has_many :elements, :dependent => :destroy, :class_name => 'Spree::PageElement'
 
   validates_presence_of :title
-  validates_presence_of [:slug, :body], :if => :not_using_foreign_link?
+  validates_presence_of :slug, :if => :not_using_foreign_link?
   validates_presence_of :layout, :if => :render_layout_as_partial?
 
   validates :slug, :uniqueness => true, :if => :not_using_foreign_link?

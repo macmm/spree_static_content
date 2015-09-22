@@ -13,18 +13,12 @@
       <%= f.error_message_on :slug %>
     <% end %>
 
-    <%= f.field_container :body do %>
-      <%= f.label :body %> <span class="required">*</span><br />
-      <%= f.text_area :body, {rows: 12, :class => 'fullwidth'} %>
-      <%= f.error_message_on :body %>
-    <% end %>
-
     <% @page.elements.build unless @page.elements.present? %>
 
     <%= f.fields_for :elements do |page_element| %>
       <%= f.field_container :body do %>
         <%= page_element.label :element, page_element.object.name %> <span class="required">*</span><br />
-        <%= page_element.text_area :body, {rows: 12, :class => 'fullwidth'} %>
+        <%= page_element.text_area :body, {rows: 10, :class => 'fullwidth'} %>
       <% end %>
     <% end %>
 
