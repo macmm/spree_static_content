@@ -73,28 +73,6 @@
     <% end %>
     
   </div>
-
-  <div data-hook="admin_page_form_meta" class="alpha omega twelve columns">
-
-    <%= f.field_container :meta_title do %>
-      <%= f.label :meta_title %><br />
-      <%= f.text_field :meta_title, :class => 'fullwidth title' %>
-      <%= f.error_message_on :meta_title %>
-    <% end %>
-
-    <%= f.field_container :meta_keywords do %>
-      <%= f.label :meta_keywords %><br />
-      <%= f.text_field :meta_keywords, :class => 'fullwidth title' %>
-      <%= f.error_message_on :meta_keywords %>
-    <% end %>
-
-    <%= f.field_container :meta_description do %>
-      <%= f.label :meta_description %><br />
-      <%= f.text_field :meta_description, :class => 'fullwidth title' %>
-      <%= f.error_message_on :meta_description %>
-    <% end %>
-
-  </div>
   <div class="clear"></div>
   <div data-hook="admin_page_form_additional_fields"></div>
   <div class="clear"></div>
