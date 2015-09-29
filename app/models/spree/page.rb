@@ -33,6 +33,10 @@ class Spree::Page < ActiveRecord::Base
     foreign_link.blank? ? slug : foreign_link
   end
 
+  def get_element(name)
+    elements.where(name: name).first
+  end
+
 private
 
   def update_positions_and_slug
