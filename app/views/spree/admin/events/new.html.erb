@@ -1,0 +1,18 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+   New Event
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to "Back to Events", spree.admin_events_url, :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @event %>
+
+<%= form_for [:admin, @event] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>
